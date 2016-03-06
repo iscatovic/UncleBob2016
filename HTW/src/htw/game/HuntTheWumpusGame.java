@@ -168,6 +168,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	public Command makeMoveCommand(Direction direction) {
 		return new MoveCommand(direction);
 	}
+	
+	public Command makeHealCommand() {
+		return new HealCommand();
+	}
 
 	public abstract class GameCommand implements Command {
 		public void execute() {

@@ -99,6 +99,8 @@ public class Main implements HtwMessageReceiver {
         c = game.makeShootCommand(NORTH);
       else if (command.equalsIgnoreCase("ss"))
         c = game.makeShootCommand(SOUTH);
+      else if (command.equalsIgnoreCase("h"))
+    	  c=game.makeHealCommand();
       else if (command.equalsIgnoreCase("q"))
         return;
       //ADD AN ELSE STATEMENT HERE
