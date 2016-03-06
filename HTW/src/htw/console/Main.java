@@ -31,41 +31,41 @@ public class Main implements HtwMessageReceiver {
 			"with bones scattered around", "with a corpse on the floor", "that seems to vibrate", "that feels stuffy",
 			"that fills you with dread" };
 
-	public static void main(String[] args) throws IOException {
-		game = HtwFactory.makeGame("htw.game.HuntTheWumpusGame", new Main());
-		createMap();
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		game.makeRestCommand().execute();
-		while (true) {
-			System.out.println(game.getPlayerCavern());
-			System.out.println("Health: " + hitPoints + " arrows: " + game.getQuiver());
-			HuntTheWumpus.Command c = game.makeRestCommand();
-			System.out.println(">");
-			String command = br.readLine();
-			if (command.equalsIgnoreCase("e"))
-				c = game.makeMoveCommand(EAST);
-			else if (command.equalsIgnoreCase("w"))
-				c = game.makeMoveCommand(WEST);
-			else if (command.equalsIgnoreCase("n"))
-				c = game.makeMoveCommand(NORTH);
-			else if (command.equalsIgnoreCase("s"))
-				c = game.makeMoveCommand(SOUTH);
-			else if (command.equalsIgnoreCase("r"))
-				c = game.makeRestCommand();
-			else if (command.equalsIgnoreCase("sw"))
-				c = game.makeShootCommand(WEST);
-			else if (command.equalsIgnoreCase("se"))
-				c = game.makeShootCommand(EAST);
-			else if (command.equalsIgnoreCase("sn"))
-				c = game.makeShootCommand(NORTH);
-			else if (command.equalsIgnoreCase("ss"))
-				c = game.makeShootCommand(SOUTH);
-			else if (command.equalsIgnoreCase("q"))
-				return;
-
-			c.execute();
-		}
-	}
+  public static void main(String[] args) throws IOException {
+    game = HtwFactory.makeGame("htw.game.HuntTheWumpusGame", new Main());
+    createMap();
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    game.makeRestCommand().execute();
+    while (true) {
+      System.out.println(game.getPlayerCavern());
+      System.out.println("Health: " + hitPoints + " arrows: " + game.getQuiver());
+      HuntTheWumpus.Command c = game.makeRestCommand();
+      System.out.println(">");
+      String command = br.readLine();
+      if (command.equalsIgnoreCase("e"))
+        c = game.makeMoveCommand(EAST);
+      else if (command.equalsIgnoreCase("w"))
+        c = game.makeMoveCommand(WEST);
+      else if (command.equalsIgnoreCase("n"))
+        c = game.makeMoveCommand(NORTH);
+      else if (command.equalsIgnoreCase("s"))
+        c = game.makeMoveCommand(SOUTH);
+      else if (command.equalsIgnoreCase("r"))
+        c = game.makeRestCommand();
+      else if (command.equalsIgnoreCase("sw"))
+        c = game.makeShootCommand(WEST);
+      else if (command.equalsIgnoreCase("se"))
+        c = game.makeShootCommand(EAST);
+      else if (command.equalsIgnoreCase("sn"))
+        c = game.makeShootCommand(NORTH);
+      else if (command.equalsIgnoreCase("ss"))
+        c = game.makeShootCommand(SOUTH);
+      else if (command.equalsIgnoreCase("q"))
+        return;
+      //ADD AN ELSE STATEMENT HERE
+      c.execute();
+    }
+  }
 
 	private static void createMap() {
 		int ncaverns = (int) (Math.random() * 30.0 + 10.0);
