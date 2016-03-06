@@ -120,12 +120,15 @@ public class Main implements HtwMessageReceiver {
     }
 
     String playerCavern = anyCavern();
+    String elixirCavern = anyCavern();
     game.setPlayerCavern(playerCavern);
     game.setWumpusCavern(anyOther(playerCavern));
+    
     game.setElixirCavern(anyOther(playerCavern));
-    game.addBatCavern(anyOther(playerCavern));
-    game.addBatCavern(anyOther(playerCavern));
-    game.addBatCavern(anyOther(playerCavern));
+    
+    game.addBatCavern(anyOther(playerCavern, elixirCavern));
+    game.addBatCavern(anyOther(playerCavern, elixirCavern));
+    game.addBatCavern(anyOther(playerCavern, elixirCavern));
 
     game.addPitCavern(anyOther(playerCavern));
     game.addPitCavern(anyOther(playerCavern));
@@ -166,6 +169,14 @@ public class Main implements HtwMessageReceiver {
       otherCavern = anyCavern();
     }
     return otherCavern;
+  }
+  
+  private static String anyOther(String cavern1, String cavern2) {
+	  String otherCavern = cavern1;
+	  while (cavern1.equals(otherCavern)||cavern2.equals(otherCavern)) {
+		  otherCavern = anyCavern();
+	  }
+	  return otherCavern;
   }
 
   private static String anyCavern() {
