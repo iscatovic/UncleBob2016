@@ -103,7 +103,6 @@ public class Main implements HtwMessageReceiver {
     	  c=game.makeHealCommand();
       else if (command.equalsIgnoreCase("q"))
         return;
-      //ADD AN ELSE STATEMENT HERE
       c.execute();
     }
   }
@@ -123,6 +122,7 @@ public class Main implements HtwMessageReceiver {
     String playerCavern = anyCavern();
     game.setPlayerCavern(playerCavern);
     game.setWumpusCavern(anyOther(playerCavern));
+    game.setElixirCavern(anyOther(playerCavern));
     game.addBatCavern(anyOther(playerCavern));
     game.addBatCavern(anyOther(playerCavern));
     game.addBatCavern(anyOther(playerCavern));
