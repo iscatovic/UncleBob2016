@@ -16,7 +16,7 @@ public interface HtwMessageReceiver {
   void playerMovesToWumpus();
   void wumpusMovesToPlayer();
   void batsTransport();
-  void playerHealed(String type, int amount);
+  void playerHealed();
   void noElixir();
   void hearElixir();
   void elixirFound();

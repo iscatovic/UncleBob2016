@@ -91,7 +91,7 @@ public class TestContext implements HtwMessageReceiver {
   }
 
 @Override
-public void playerHealed(String type, int amount) {
+public void playerHealed() {
 	messages.add("PLAYER_HEALED");
 	
 }

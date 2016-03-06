@@ -265,11 +265,9 @@ public class Main implements HtwMessageReceiver {
 	  System.out.println("You have no elixir.");
   }
 
-  public void playerHealed(String type, int amount) {
-	  if ("full".equalsIgnoreCase(type))
-		  hitPoints = amount;
-	  else
-		  hitPoints += amount;
+  @Override
+  public void playerHealed() {
+	  hitPoints = 10;
 	System.out.println("You used the elixir to heal yourself.");	
   }
 

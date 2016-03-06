@@ -205,7 +205,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		}
 
 		private void healPlayer() {
-			messageReceiver.playerHealed("full", 10);
+			messageReceiver.playerHealed();
 		}
 	}
 
