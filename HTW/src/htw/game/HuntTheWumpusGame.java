@@ -17,6 +17,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private String wumpusCavern = "NONE";
 	private int quiver = 0;
 	private Map<String, Integer> arrowsIn = new HashMap<>();
+	private String elixirCavern = "NONE";
 
 	public HuntTheWumpusGame(HtwMessageReceiver receiver) {
 		this.messageReceiver = receiver;
@@ -29,6 +30,13 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	public String getPlayerCavern() {
 		return playerCavern;
 	}
+	
+	public void setElixirCavern(String elixirCavern) {
+		this.elixirCavern = elixirCavern;
+	}
+	public String getElixirCavern() {
+		return elixirCavern;
+	}
 
 	private void reportStatus() {
 		reportAvailableDirections();
@@ -38,6 +46,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			messageReceiver.hearPit();
 		if (reportNearby(c -> wumpusCavern.equals(c.to)))
 			messageReceiver.smellWumpus();
+		if (reportNearby(c -> elixirCavern.equals(c.to)))
+			messageReceiver.hearElixir();
 	}
 
 	private boolean reportNearby(Predicate<Connection> nearTest) {

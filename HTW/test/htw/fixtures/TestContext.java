@@ -55,6 +55,12 @@ public class TestContext implements HtwMessageReceiver {
   public void smellWumpus() {
     messages.add("SMELL_WUMPUS");
   }
+  
+  @Override
+  public void hearElixir() {
+  	messages.add("HEAR_ELIXIR");
+  	
+  }
 
   public void arrowsFound(Integer arrowsFound) {
     messages.add(String.format("%d_ARROW_FOUND", arrowsFound));
@@ -83,4 +89,6 @@ public class TestContext implements HtwMessageReceiver {
   public void playerShootsWall() {
     messages.add("PLAYER_SHOOTS_WALL");
   }
+
+
 }
