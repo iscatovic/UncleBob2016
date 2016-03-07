@@ -3,7 +3,7 @@ package com.smbcgroup.common;
 public class TestClass {
 
 	public static void testSomething() {
-		System.out.println("Yes");
+		System.out.println("No");
 	}
 	
 	public static void main(String args[])
