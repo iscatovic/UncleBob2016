@@ -171,6 +171,6 @@ public class HtwFixture {
 	  game.setHunterName(name);
   }
   public void setWumpusName(String name) {
-	  game.setHunterName(name);
+	  game.setWumpusName(name);
   }
 }

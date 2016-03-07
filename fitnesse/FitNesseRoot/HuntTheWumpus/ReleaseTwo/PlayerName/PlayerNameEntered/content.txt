@@ -1,8 +1,8 @@
 -!|script|
-|Given hunter has entered name|
-|Then hunter_name is given|
+|Given hunter name is player1|
+|Then the hunter name is player1|
 
 -!|script|
-|Given wumpus has entered name|
-|Then wumpus_name is given|
+|Given wumpus name is player2|
+|Then the wumpus name is player2|
 
