@@ -165,7 +165,7 @@ public class HtwFixture {
 	  return game.getHunterName();
   }
   public String getWumpusName() {
-	  return game.getHunterName();
+	  return game.getWumpusName();
   }
   public void setHunterName(String name) {
 	  game.setHunterName(name);
