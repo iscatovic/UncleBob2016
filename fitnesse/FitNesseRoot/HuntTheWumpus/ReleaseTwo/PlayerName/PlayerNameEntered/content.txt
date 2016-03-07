@@ -1,0 +1,8 @@
+-!|script|
+|Given hunter has entered name|
+|Then hunter_name is given|
+
+-!|script|
+|Given wumpus has entered name|
+|Then wumpus_name is given|
+

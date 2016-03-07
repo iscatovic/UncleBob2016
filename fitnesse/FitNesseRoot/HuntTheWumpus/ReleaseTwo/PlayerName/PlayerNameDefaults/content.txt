@@ -1,0 +1,7 @@
+-!|script|
+|Given hunter has no name|
+|Then hunter_name is given|
+
+-!|script|
+|Given wumpus has no name|
+|Then wumpus_name is given|
