@@ -18,7 +18,7 @@ public class HtwFixture {
   }
 
   public boolean movePlayer(String dir) {
-//    game.makeMoveCommand(toDirection(dir)).execute();
+    game.makeMoveCommand(toDirection(dir)).execute();
     return true;
   } 
 
