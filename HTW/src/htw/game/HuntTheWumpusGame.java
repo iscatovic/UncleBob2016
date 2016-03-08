@@ -289,8 +289,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     }
 
     private void checkForPit() {
-      if (pitCaverns.contains(playerCavern))
-        messageReceiver.fellInPit();
+//      if (pitCaverns.contains(playerCavern))
+//        messageReceiver.fellInPit();
     }
 
     private void checkForArrows() {
