@@ -48,10 +48,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
   }
 
   private void reportAvailableDirections() {
-    for (Connection c : connections) {
-      if (playerCavern.equals(c.from))
-        messageReceiver.passage(c.direction);
-    }
+ //   for (Connection c : connections) {
+  //    if (playerCavern.equals(c.from))
+  //      messageReceiver.passage(c.direction);
+  //  }
   }
 
   public void addBatCavern(String cavern) {
