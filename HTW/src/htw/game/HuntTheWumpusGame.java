@@ -280,11 +280,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
     }
 
     public boolean movePlayer(Direction direction) {
-      String destination = findDestination(playerCavern, direction);
-      if (destination != null) {
-        playerCavern = destination;
-        return true;
-      }
+//      String destination = findDestination(playerCavern, direction);
+//      if (destination != null) {
+//        playerCavern = destination;
+//        return true;
+//      }
       return false;
     }
 
