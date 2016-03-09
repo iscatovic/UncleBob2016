@@ -21,4 +21,6 @@ public interface HtwMessageReceiver {
   void hearElixir();
   void elixirFound();
   void slowDeath();
+  void fireworks();
+  void end();
 }

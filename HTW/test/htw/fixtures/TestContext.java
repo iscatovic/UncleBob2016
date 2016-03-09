@@ -113,4 +113,14 @@ public void slowDeath() {
 	messages.add("HEALTH_REACHED_ZERO");
 	
 }
+
+@Override
+public void fireworks() {
+	messages.add("FIREWORKS");
+}
+
+@Override
+public void end() {
+	messages.add("GAME_OVER");
+}
 }

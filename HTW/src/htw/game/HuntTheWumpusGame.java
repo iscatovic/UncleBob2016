@@ -24,7 +24,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	public int getHitPoints() {
 		return hitPoints;
 	}
-	
+
 	public void setHitPoints(int hitPoints) {
 		this.hitPoints = hitPoints;
 	}
@@ -44,7 +44,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			System.exit(0);
 		}
 	}
-	
+
 	public HuntTheWumpusGame(HtwMessageReceiver receiver) {
 		this.messageReceiver = receiver;
 	}
@@ -56,10 +56,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	public String getPlayerCavern() {
 		return playerCavern;
 	}
-	
+
 	public void setElixirCavern(String elixirCavern) {
 		this.elixirCavern = elixirCavern;
 	}
+
 	public String getElixirCavern() {
 		return elixirCavern;
 	}
@@ -182,7 +183,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	public Command makeMoveCommand(Direction direction) {
 		return new MoveCommand(direction);
 	}
-	
+
 	public Command makeHealCommand() {
 		return new HealCommand();
 	}
@@ -196,8 +197,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		}
 
 		protected void checkWumpusMovedToPlayer() {
-			if (playerCavern.equals(wumpusCavern))
+			if (playerCavern.equals(wumpusCavern)) {
 				messageReceiver.wumpusMovesToPlayer();
+				messageReceiver.end();
+			}
 		}
 
 		protected abstract void processCommand();
@@ -208,23 +211,24 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		public void processCommand() {
 		}
 	}
-	
+
 	private class HealCommand extends GameCommand {
 		public void processCommand() {
-			if (items.hasElixir())
-			{
+			
+			messageReceiver.fireworks();
+			
+			if (items.hasElixir()) {
 				healPlayer();
 				items.setElixir(false);
-			}
-			else
+			} else
 				messageReceiver.noElixir();
 		}
 
 		private void healPlayer() {
-			 setHitPoints(10);
-			 items.setElixir(false);
-			 messageReceiver.playerHealed();
-			 }
+			setHitPoints(10);
+			items.setElixir(false);
+			messageReceiver.playerHealed();
+		}
 	}
 
 	private class ShootCommand extends GameCommand {
@@ -240,7 +244,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			else {
 				messageReceiver.arrowShot();
 				quiver--;
-				ArrowTracker arrowTracker = new ArrowTracker(playerCavern).trackArrow(direction);
+				ArrowTracker arrowTracker = new ArrowTracker(playerCavern)
+						.trackArrow(direction);
 				if (arrowTracker.arrowHitSomething())
 					return;
 				incrementArrowsInCavern(arrowTracker.getArrowCavern());
@@ -270,7 +275,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 			public ArrowTracker trackArrow(Direction direction) {
 				String nextCavern;
-				for (int count = 0; (nextCavern = nextCavern(arrowCavern, direction)) != null; count++) {
+				for (int count = 0; (nextCavern = nextCavern(arrowCavern,
+						direction)) != null; count++) {
 					arrowCavern = nextCavern;
 					if (shotSelfInBack())
 						return this;
@@ -279,17 +285,18 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 					if (count > 100)
 						return this;
 				}
-				if (arrowCavern.equals(playerCavern))
-					{
+				if (arrowCavern.equals(playerCavern)) {
 					messageReceiver.playerShootsWall();
 					hit(3);
-					}
+				}
 				return this;
 			}
 
 			private boolean shotWumpus() {
 				if (arrowCavern.equals(wumpusCavern)) {
 					messageReceiver.playerKillsWumpus();
+					messageReceiver.fireworks();
+					messageReceiver.end();
 					hitSomething = true;
 					return true;
 				}
@@ -334,8 +341,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		}
 
 		private void checkForWumpus() {
-			if (wumpusCavern.equals(playerCavern))
+			if (wumpusCavern.equals(playerCavern)) {
 				messageReceiver.playerMovesToWumpus();
+				messageReceiver.end();
+			}
 		}
 
 		private void checkForBats() {
@@ -355,8 +364,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		}
 
 		private void checkForPit() {
-			if (pitCaverns.contains(playerCavern))
-			{
+			if (pitCaverns.contains(playerCavern)) {
 				messageReceiver.fellInPit();
 				hit(4);
 			}
@@ -369,14 +377,14 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			quiver += arrowsFound;
 			arrowsIn.put(playerCavern, 0);
 		}
-		
+
 		private void checkForElixir() {
 			if (elixirCavern.contains(playerCavern)) {
 				items.setElixir(true);
 				elixirCavern = "NONE";
 				messageReceiver.elixirFound();
 			}
-				
+
 		}
 	}
 }

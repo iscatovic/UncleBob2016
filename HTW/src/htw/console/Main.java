@@ -11,6 +11,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+
 import static htw.HuntTheWumpus.Direction.*;
 
 public class Main implements HtwMessageReceiver {
@@ -221,7 +226,6 @@ public class Main implements HtwMessageReceiver {
 
   public void playerKillsWumpus() {
     System.out.println("You killed the Wumpus.");
-    System.exit(0);
   }
 
   public void playerShootsWall() {
@@ -238,12 +242,10 @@ public class Main implements HtwMessageReceiver {
 
   public void playerMovesToWumpus() {
     System.out.println("You walked into the waiting arms of the Wumpus.");
-    System.exit(0);
   }
 
   public void wumpusMovesToPlayer() {
     System.out.println("The Wumpus has found you.");
-    System.exit(0);
   }
 
   public void batsTransport() {
@@ -265,4 +267,20 @@ public class Main implements HtwMessageReceiver {
   public void elixirFound() {
 	  System.out.println("You found a healing elixir.");
   }
+
+  public void fireworks() {
+	  System.out.println("Hooray.");
+	  
+	  JFrame frame = new JFrame();
+	  ImageIcon icon = new ImageIcon("./img/fireworks.jpg");
+	  JLabel label = new JLabel(icon);
+	  frame.add(label);
+	  frame.setDefaultCloseOperation
+	         (JFrame.EXIT_ON_CLOSE);
+	  frame.pack();
+	  frame.setVisible(true);
+  }
+  
+  public void end()
+  {  System.exit(0); }
 }
