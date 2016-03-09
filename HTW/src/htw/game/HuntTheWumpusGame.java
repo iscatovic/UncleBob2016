@@ -372,9 +372,9 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		
 		private void checkForElixir() {
 			if (elixirCavern.contains(playerCavern)) {
-				items.giveElixir(true);
+				items.setElixir(true);
+				elixirCavern = "NONE";
 				messageReceiver.elixirFound();
-				elixirCavern= "NONE";
 			}
 				
 		}

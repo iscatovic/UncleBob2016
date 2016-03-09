@@ -1,6 +1,7 @@
 package htw.fixtures;
 
 import htw.HuntTheWumpus;
+import htw.HuntTheWumpus.Items;
 
 import java.util.Map;
 
@@ -62,6 +63,11 @@ public class HtwFixture {
     game.addBatCavern(cavern);
     return true;
   }
+  
+  public boolean setCavernAsElixir(String cavern) {
+	  game.setElixirCavern(cavern);
+	  return true;
+  }
 
   public boolean rest() {
     game.makeRestCommand().execute();
@@ -113,6 +119,18 @@ public class HtwFixture {
     game.makeShootCommand(toDirection(direction)).execute();
     return true;
   }
+  
+  public boolean drinkElixir() {
+	  game.makeHealCommand();
+	  return true;
+  }
+  
+  public boolean setElixirTo(boolean hasElixir) {
+	  Items items = new Items();
+	  items.setElixir(hasElixir);
+	  game.setItems(items);
+	  return true;
+  }
 
   private HuntTheWumpus.Direction toDirection(String direction) {
     return HuntTheWumpus.Direction.valueOf(direction.toUpperCase());
@@ -120,6 +138,14 @@ public class HtwFixture {
 
   public int arrowsInQuiver() {
     return game.getQuiver();
+  }
+  
+  public boolean playerHasElixir() {
+	  return game.getItems().hasElixir();
+  }
+  
+  public boolean cavernHasElixir(String cavern) {
+	  return cavern.equalsIgnoreCase(game.getElixirCavern());
   }
 
   public int arrowsInCavern(String cavern) {

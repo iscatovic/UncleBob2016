@@ -59,7 +59,7 @@ public interface HuntTheWumpus {
 		public boolean hasElixir() {
 			return elixir;
 		}
-		public void giveElixir(boolean elixir) {
+		public void setElixir(boolean elixir) {
 			this.elixir = elixir;
 		}	
 	}
