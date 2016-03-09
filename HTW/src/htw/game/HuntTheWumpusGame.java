@@ -19,6 +19,15 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private Map<String, Integer> arrowsIn = new HashMap<>();
 	private String elixirCavern = "NONE";
 	private Items items = new Items();
+	private int hitPoints;
+
+	public int getHitPoints() {
+		return hitPoints;
+	}
+	
+	public void setHitPoints(int hitPoints) {
+		this.hitPoints = hitPoints;
+	}
 
 	public Items getItems() {
 		return items;
@@ -28,6 +37,13 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		this.items = items;
 	}
 
+	private void hit(int points) {
+		hitPoints -= points;
+		if (hitPoints <= 0) {
+			System.out.println("You have died of your wounds.");
+			System.exit(0);
+		}
+	}
 	
 	public HuntTheWumpusGame(HtwMessageReceiver receiver) {
 		this.messageReceiver = receiver;
@@ -205,8 +221,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		}
 
 		private void healPlayer() {
-			messageReceiver.playerHealed("full", 10);
-		}
+			 setHitPoints(10);
+			 items.giveElixir(false);
+			 messageReceiver.playerHealed();
+			 }
 	}
 
 	private class ShootCommand extends GameCommand {
@@ -262,7 +280,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 						return this;
 				}
 				if (arrowCavern.equals(playerCavern))
+					{
 					messageReceiver.playerShootsWall();
+					hit(3);
+					}
 				return this;
 			}
 
@@ -278,6 +299,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			private boolean shotSelfInBack() {
 				if (arrowCavern.equals(playerCavern)) {
 					messageReceiver.playerShootsSelfInBack();
+					hit(3);
 					hitSomething = true;
 					return true;
 				}
@@ -334,7 +356,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 		private void checkForPit() {
 			if (pitCaverns.contains(playerCavern))
+			{
 				messageReceiver.fellInPit();
+				hit(4);
+			}
 		}
 
 		private void checkForArrows() {
@@ -349,6 +374,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			if (elixirCavern.contains(playerCavern)) {
 				items.giveElixir(true);
 				messageReceiver.elixirFound();
+				elixirCavern= "NONE";
 			}
 				
 		}

@@ -91,7 +91,7 @@ public class TestContext implements HtwMessageReceiver {
   }
 
 @Override
-public void playerHealed(String type, int amount) {
+public void playerHealed() {
 	messages.add("PLAYER_HEALED");
 	
 }
@@ -105,6 +105,12 @@ public void noElixir() {
 @Override
 public void elixirFound() {
 	messages.add("FOUND_ELIXIR");
+	
+}
+
+@Override
+public void slowDeath() {
+	messages.add("HEALTH_REACHED_ZERO");
 	
 }
 }

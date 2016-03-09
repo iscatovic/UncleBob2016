@@ -15,7 +15,6 @@ import static htw.HuntTheWumpus.Direction.*;
 
 public class Main implements HtwMessageReceiver {
   private static HuntTheWumpus game;
-  private static int hitPoints = 10;
   private static final List<String> caverns = new ArrayList<>();
   private static final String[] environments = new String[]{
     "bright",
@@ -77,7 +76,7 @@ public class Main implements HtwMessageReceiver {
     game.makeRestCommand().execute();
     while (true) {
       System.out.println(game.getPlayerCavern());
-      System.out.println("Health: " + hitPoints + " / arrows: " + game.getQuiver() + " / elixir: " + (game.getItems().hasElixir() ? 1 : 0));
+      System.out.println("Health: " + game.getHitPoints() + " / arrows: " + game.getQuiver() + " / elixir: " + (game.getItems().hasElixir() ? 1 : 0));
       HuntTheWumpus.Command c = game.makeRestCommand();
       System.out.println(">");
       String command = br.readLine();
@@ -135,6 +134,7 @@ public class Main implements HtwMessageReceiver {
     game.addPitCavern(anyOther(playerCavern));
 
     game.setQuiver(5);
+    game.setHitPoints(10);
   }
 
   private static String makeName() {
@@ -217,7 +217,6 @@ public class Main implements HtwMessageReceiver {
 
   public void playerShootsSelfInBack() {
     System.out.println("Ow!  You shot yourself in the back.");
-    hit(3);
   }
 
   public void playerKillsWumpus() {
@@ -227,7 +226,6 @@ public class Main implements HtwMessageReceiver {
 
   public void playerShootsWall() {
     System.out.println("You shot the wall and the ricochet hurt you.");
-    hit(3);
   }
 
   public void arrowsFound(Integer arrowsFound) {
@@ -236,7 +234,6 @@ public class Main implements HtwMessageReceiver {
 
   public void fellInPit() {
     System.out.println("You fell in a pit and hurt yourself.");
-    hit(4);
   }
 
   public void playerMovesToWumpus() {
@@ -253,23 +250,15 @@ public class Main implements HtwMessageReceiver {
     System.out.println("Some bats carried you away.");
   }
 
-  private void hit(int points) {
-    hitPoints -= points;
-    if (hitPoints <= 0) {
+  public void slowDeath() {
       System.out.println("You have died of your wounds.");
-      System.exit(0);
-    }
   }
   
   public void noElixir() {
 	  System.out.println("You have no elixir.");
   }
 
-  public void playerHealed(String type, int amount) {
-	  if ("full".equalsIgnoreCase(type))
-		  hitPoints = amount;
-	  else
-		  hitPoints += amount;
+  public void playerHealed() {
 	System.out.println("You used the elixir to heal yourself.");	
   }
 
