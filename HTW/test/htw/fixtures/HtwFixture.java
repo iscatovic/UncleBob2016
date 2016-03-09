@@ -121,7 +121,7 @@ public class HtwFixture {
   }
   
   public boolean drinkElixir() {
-	  game.makeHealCommand();
+	  game.makeHealCommand().execute();
 	  return true;
   }
   
