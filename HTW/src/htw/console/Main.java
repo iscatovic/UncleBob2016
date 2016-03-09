@@ -101,7 +101,7 @@ public class Main implements HtwMessageReceiver {
         c = game.makeShootCommand(SOUTH);
       else if (command.equalsIgnoreCase("q"))
         return;
-
+      //ADD AN ELSE STATEMENT HERE
       c.execute();
     }
   }
