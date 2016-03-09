@@ -20,4 +20,5 @@ public interface HtwMessageReceiver {
   void noElixir();
   void hearElixir();
   void elixirFound();
+  void slowDeath();
 }

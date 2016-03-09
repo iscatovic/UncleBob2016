@@ -46,6 +46,8 @@ public interface HuntTheWumpus {
   HuntTheWumpusGame.Command makeShootCommand(Direction direction);
   HuntTheWumpusGame.Command makeMoveCommand(Direction direction);
   HuntTheWumpusGame.Command makeHealCommand();
+  public int getHitPoints();
+  public void setHitPoints(int hitPoints);
 
   public interface Command {
     void execute();
@@ -61,4 +63,6 @@ public interface HuntTheWumpus {
 			this.elixir = elixir;
 		}	
 	}
+  
+
 }
