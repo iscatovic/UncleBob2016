@@ -214,7 +214,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			if (items.hasElixir())
 			{
 				healPlayer();
-				items.giveElixir(false);
+				items.setElixir(false);
 			}
 			else
 				messageReceiver.noElixir();
@@ -222,7 +222,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 		private void healPlayer() {
 			 setHitPoints(10);
-			 items.giveElixir(false);
+			 items.setElixir(false);
 			 messageReceiver.playerHealed();
 			 }
 	}
