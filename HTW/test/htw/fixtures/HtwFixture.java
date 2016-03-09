@@ -151,4 +151,13 @@ public class HtwFixture {
   public int arrowsInCavern(String cavern) {
     return game.getArrowsInCavern(cavern);
   }
+  
+  public boolean setHitPointsTo(int hitpoints) {
+	  game.setHitPoints(hitpoints);
+	  return true;
+  }
+  
+  public int hitpointsRemaining() {
+	  return game.getHitPoints();
+  }
 }
