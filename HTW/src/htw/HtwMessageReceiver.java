@@ -18,4 +18,5 @@ public interface HtwMessageReceiver {
   void batsTransport();
   void playerHealed(String type, int amount);
   void noElixir();
+  void hearElixir();
 }

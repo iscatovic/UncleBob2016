@@ -181,6 +181,10 @@ public class Main implements HtwMessageReceiver {
   public void hearPit() {
     System.out.println("You hear wind.");
   }
+  
+	public void hearElixir() {
+		System.out.println("You hear a bubbling potion.");
+	}
 
   public void smellWumpus() {
     System.out.println("There is a terrible smell.");
