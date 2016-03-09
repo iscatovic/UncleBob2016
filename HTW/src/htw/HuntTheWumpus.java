@@ -36,6 +36,8 @@ public interface HuntTheWumpus {
   void setElixirCavern(String elixirCavern);
   String getWumpusCavern();
   void setQuiver(int arrows);
+  Items getItems();
+  void setItems(Items items);
   int getQuiver();
   Integer getArrowsInCavern(String cavern);
   void connectCavern(String from, String to, Direction direction);
@@ -48,4 +50,15 @@ public interface HuntTheWumpus {
   public interface Command {
     void execute();
   }
+  
+  public class Items {
+		private boolean elixir;
+
+		public boolean hasElixir() {
+			return elixir;
+		}
+		public void giveElixir(boolean elixir) {
+			this.elixir = elixir;
+		}	
+	}
 }

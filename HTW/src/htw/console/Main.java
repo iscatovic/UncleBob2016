@@ -77,7 +77,7 @@ public class Main implements HtwMessageReceiver {
     game.makeRestCommand().execute();
     while (true) {
       System.out.println(game.getPlayerCavern());
-      System.out.println("Health: " + hitPoints + " arrows: " + game.getQuiver());
+      System.out.println("Health: " + hitPoints + " / arrows: " + game.getQuiver() + " / elixir: " + (game.getItems().hasElixir() ? 1 : 0));
       HuntTheWumpus.Command c = game.makeRestCommand();
       System.out.println(">");
       String command = br.readLine();
@@ -100,7 +100,7 @@ public class Main implements HtwMessageReceiver {
       else if (command.equalsIgnoreCase("ss"))
         c = game.makeShootCommand(SOUTH);
       else if (command.equalsIgnoreCase("h"))
-    	  c=game.makeHealCommand();
+    	 c = game.makeHealCommand();
       else if (command.equalsIgnoreCase("q"))
         return;
       c.execute();

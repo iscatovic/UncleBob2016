@@ -20,16 +20,14 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private String elixirCavern = "NONE";
 	private Items items = new Items();
 
-	private class Items {
-		private boolean elixir;
-
-		public boolean hasElixir() {
-			return elixir;
-		}
-		public void giveElixir(boolean elixir) {
-			this.elixir = elixir;
-		}	
+	public Items getItems() {
+		return items;
 	}
+
+	public void setItems(Items items) {
+		this.items = items;
+	}
+
 	
 	public HuntTheWumpusGame(HtwMessageReceiver receiver) {
 		this.messageReceiver = receiver;
