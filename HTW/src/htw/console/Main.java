@@ -179,10 +179,10 @@ public class Main implements HtwMessageReceiver {
   }
 
   public void hearPit() {
-    System.out.println("You hear wind.");
-  }
+	    System.out.println("You hear wind.");
+	  }
   
-	public void hearElixir() {
+  public void hearElixir() {
 		System.out.println("You hear a bubbling potion.");
 	}
 
