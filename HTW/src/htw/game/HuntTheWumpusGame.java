@@ -17,7 +17,18 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private String wumpusCavern = "NONE";
 	private int quiver = 0;
 	private Map<String, Integer> arrowsIn = new HashMap<>();
+	private Items items = new Items();
 
+	private class Items {
+		private boolean elixir;
+
+		public boolean hasElixir() {
+			return elixir;
+		}
+		public void giveElixir(boolean elixir) {
+			this.elixir = elixir;
+		}	
+	}
 	public HuntTheWumpusGame(HtwMessageReceiver receiver) {
 		this.messageReceiver = receiver;
 	}
@@ -166,6 +177,22 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 	private class RestCommand extends GameCommand {
 		public void processCommand() {
+		}
+	}
+	
+	private class HealCommand extends GameCommand {
+		public void processCommand() {
+			if (items.hasElixir())
+			{
+				healPlayer();
+				items.giveElixir(false);
+			}
+			else
+				messageReceiver.noElixir();
+		}
+
+		private void healPlayer() {
+			messageReceiver.playerHealed("full", 10);
 		}
 	}
 

@@ -243,4 +243,16 @@ public class Main implements HtwMessageReceiver {
       System.exit(0);
     }
   }
+  
+  public void noElixir() {
+	  System.out.println("You have no elixir.");
+  }
+
+  public void playerHealed(String type, int amount) {
+	  if ("full".equalsIgnoreCase(type))
+		  hitPoints = amount;
+	  else
+		  hitPoints += amount;
+	System.out.println("You used the elixir to heal yourself.");	
+  }
 }

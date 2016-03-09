@@ -83,4 +83,16 @@ public class TestContext implements HtwMessageReceiver {
   public void playerShootsWall() {
     messages.add("PLAYER_SHOOTS_WALL");
   }
+
+@Override
+public void playerHealed(String type, int amount) {
+	messages.add("PLAYER_HEALED");
+	
+}
+
+@Override
+public void noElixir() {
+	messages.add("NO_ELIXIR");
+	
+}
 }
