@@ -1,0 +1,8 @@
+-!|script|
+|Given Cross Map|
+|Given the wumpus is in cavern Below|
+|Given the player is in cavern Above|
+|Given the player has 3 arrows|
+|When the player shoots South|
+|Then a|WUMPUS_KILLED|message is given|
+|Then a|FIREWORKS|message is given|
