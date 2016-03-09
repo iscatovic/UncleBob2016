@@ -214,9 +214,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 	private class HealCommand extends GameCommand {
 		public void processCommand() {
-			
-			messageReceiver.fireworks();
-			
 			if (items.hasElixir()) {
 				healPlayer();
 				items.setElixir(false);
