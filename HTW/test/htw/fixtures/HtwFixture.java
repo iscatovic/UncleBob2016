@@ -134,6 +134,10 @@ public class HtwFixture {
   public int arrowsInQuiver() {
     return game.getQuiver();
   }
+  
+  public boolean playerHasElixir() {
+	  return game.getItems().hasElixir();
+  }
 
   public int arrowsInCavern(String cavern) {
     return game.getArrowsInCavern(cavern);
