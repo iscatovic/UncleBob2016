@@ -33,6 +33,7 @@ public interface HuntTheWumpus {
   void addBatCavern(String cavern);
   void addPitCavern(String cavern);
   void setWumpusCavern(String wumpusCavern);
+  void setElixirCavern(String elixirCavern);
   String getWumpusCavern();
   void setQuiver(int arrows);
   int getQuiver();
