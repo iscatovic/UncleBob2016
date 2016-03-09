@@ -123,4 +123,9 @@ public void fireworks() {
 public void end() {
 	messages.add("GAME_OVER");
 }
+
+@Override
+public void wastedElixir() {
+messages.add("WASTED_ELIXIR");	
+}
 }

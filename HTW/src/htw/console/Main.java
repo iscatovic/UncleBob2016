@@ -283,4 +283,9 @@ public class Main implements HtwMessageReceiver {
   
   public void end()
   {  System.exit(0); }
+
+@Override
+public void wastedElixir() {
+System.out.println("You wasted the elixir :(!");	
+}
 }

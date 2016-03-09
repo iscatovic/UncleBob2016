@@ -215,10 +215,18 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private class HealCommand extends GameCommand {
 		public void processCommand() {
 			if (items.hasElixir()) {
-				healPlayer();
+				if (hitPoints != 10)
+					healPlayer();
+				else
+					wastedElixir();
 				items.setElixir(false);
 			} else
 				messageReceiver.noElixir();
+		}
+
+		private void wastedElixir() {
+			items.setElixir(false);
+			messageReceiver.wastedElixir();
 		}
 
 		private void healPlayer() {
@@ -241,8 +249,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			else {
 				messageReceiver.arrowShot();
 				quiver--;
-				ArrowTracker arrowTracker = new ArrowTracker(playerCavern)
-						.trackArrow(direction);
+				ArrowTracker arrowTracker = new ArrowTracker(playerCavern).trackArrow(direction);
 				if (arrowTracker.arrowHitSomething())
 					return;
 				incrementArrowsInCavern(arrowTracker.getArrowCavern());
@@ -272,8 +279,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 			public ArrowTracker trackArrow(Direction direction) {
 				String nextCavern;
-				for (int count = 0; (nextCavern = nextCavern(arrowCavern,
-						direction)) != null; count++) {
+				for (int count = 0; (nextCavern = nextCavern(arrowCavern, direction)) != null; count++) {
 					arrowCavern = nextCavern;
 					if (shotSelfInBack())
 						return this;
