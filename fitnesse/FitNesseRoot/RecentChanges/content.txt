@@ -1,6 +1,7 @@
+|HuntTheWumpus.ReleaseTwo.Flashlight.FakeFlashlightTest||19:17:54 Wed, Mar 09, 2016|
+|HuntTheWumpus.ReleaseTwo.FireWorks||19:09:36 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseTwo.Healing.PlayerActivatesElixir||16:32:52 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseTwo.FireWorks.PlayerKillsWumpusFireworksDisplay||16:26:05 Wed, Mar 09, 2016|
-|HuntTheWumpus.ReleaseTwo.FireWorks||16:23:03 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseTwo.Healing.PlayerKilledWhenElixirAndWumpusInTheSameCavern||16:22:05 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseTwo.Healing.PlayerCannotUseElixirOnceElixirIsUsed||16:20:22 Wed, Mar 09, 2016|
 |HuntTheWumpus.ReleaseTwo.Healing.ElixirAndPitInTheSameCavern||16:18:50 Wed, Mar 09, 2016|

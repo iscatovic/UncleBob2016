@@ -1,0 +1,14 @@
+<test page>
+
+-!|script|
+|Given Cross Map|
+|Given the player is in cavern Left|
+|Given the Middle cavern has elixir|
+|Given the Middle cavern has a pit|
+|Given the player has 7 health|
+|When the player goes East|
+|Then the player is in cavern Middle|
+|Then the player health is 3|
+|Then the player has an elixir|
+|Then a|FOUND_ELIXIR|message is given|
+|Then a|FELL_IN_PIT|message is given|
