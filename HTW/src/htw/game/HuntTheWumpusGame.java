@@ -198,7 +198,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			if (items.hasElixir())
 			{
 				healPlayer();
-				items.giveElixir(false);
+				items.setElixir(false);
 			}
 			else
 				messageReceiver.noElixir();
@@ -347,7 +347,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		
 		private void checkForElixir() {
 			if (elixirCavern.contains(playerCavern)) {
-				items.giveElixir(true);
+				items.setElixir(true);
 				elixirCavern = "NONE";
 				messageReceiver.elixirFound();
 			}

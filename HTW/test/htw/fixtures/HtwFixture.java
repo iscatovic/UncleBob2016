@@ -120,9 +120,14 @@ public class HtwFixture {
     return true;
   }
   
+  public boolean drinkElixir() {
+	  game.makeHealCommand();
+	  return true;
+  }
+  
   public boolean setElixirTo(boolean hasElixir) {
 	  Items items = new Items();
-	  items.giveElixir(hasElixir);
+	  items.setElixir(hasElixir);
 	  game.setItems(items);
 	  return true;
   }
@@ -137,6 +142,10 @@ public class HtwFixture {
   
   public boolean playerHasElixir() {
 	  return game.getItems().hasElixir();
+  }
+  
+  public boolean cavernHasElixir(String cavern) {
+	  return cavern.equalsIgnoreCase(game.getElixirCavern());
   }
 
   public int arrowsInCavern(String cavern) {
