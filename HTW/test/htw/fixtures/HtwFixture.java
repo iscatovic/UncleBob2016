@@ -12,7 +12,7 @@ public class HtwFixture {
     return true;
   }
 
-  public boolean putPlayerInCavern(String c) {
+  public boolean putPlayerInCavern(String c) {  
     game.setPlayerCavern(c);
     return true;
   }
@@ -20,7 +20,7 @@ public class HtwFixture {
   public boolean movePlayer(String dir) {
     game.makeMoveCommand(toDirection(dir)).execute();
     return true;
-  }
+  } 
 
   public String getPlayerCavern() {
     return game.getPlayerCavern();
