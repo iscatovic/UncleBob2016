@@ -261,4 +261,8 @@ public class Main implements HtwMessageReceiver {
 		  hitPoints += amount;
 	System.out.println("You used the elixir to heal yourself.");	
   }
+
+  public void elixirFound() {
+	  System.out.println("You found a healing elixir.");
+  }
 }

@@ -101,4 +101,10 @@ public void noElixir() {
 	messages.add("NO_ELIXIR");
 	
 }
+
+@Override
+public void elixirFound() {
+	messages.add("FOUND_ELIXIR");
+	
+}
 }

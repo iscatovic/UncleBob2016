@@ -19,4 +19,5 @@ public interface HtwMessageReceiver {
   void playerHealed(String type, int amount);
   void noElixir();
   void hearElixir();
+  void elixirFound();
 }

@@ -308,6 +308,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 				checkForPit();
 				checkForBats();
 				checkForArrows();
+				checkForElixir();
 			} else
 				messageReceiver.noPassage();
 		}
@@ -344,6 +345,14 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 				messageReceiver.arrowsFound(arrowsFound);
 			quiver += arrowsFound;
 			arrowsIn.put(playerCavern, 0);
+		}
+		
+		private void checkForElixir() {
+			if (elixirCavern.contains(playerCavern)) {
+				items.giveElixir(true);
+				messageReceiver.elixirFound();
+			}
+				
 		}
 	}
 }
