@@ -374,4 +374,10 @@ public class Main implements HtwMessageReceiver {
 	public void wastedElixir() {
 		System.out.println("You wasted the elixir :(!");
 	}
+
+	@Override
+	public void smellHunter(int closeness) {
+		System.out.println(game.getWumpusName() + " smells the hunter, " + closeness + " spaces away.");
+		
+	}
 }

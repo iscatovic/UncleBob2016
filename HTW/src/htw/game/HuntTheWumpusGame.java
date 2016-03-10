@@ -6,8 +6,6 @@ import htw.HuntTheWumpus;
 import java.util.*;
 import java.util.function.Predicate;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class HuntTheWumpusGame implements HuntTheWumpus {
 	private List<Connection> connections = new ArrayList<>();
 
@@ -24,9 +22,9 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private int hitPoints;
 	  private String hunterName = "Hunter";
 	  private String wumpusName = "Wumpus";
-	  private boolean twoPlayerGame = false;
 	  private String gameMode = "Standard";
 	  private String[] modes = {"Standard", "Co-Hunt", "test"};
+	  private boolean wumpus = false;
 
 	public int getHitPoints() {
 		return hitPoints;
@@ -66,14 +64,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			this.wumpusName = "Wumpus";
 	}
 
-	public boolean isTwoPlayerGame() {
-		return twoPlayerGame;
-	}
-
-	public void setTwoPlayerGame(boolean twoPlayerGame) {
-		this.twoPlayerGame = twoPlayerGame;
-	}
-
 	public String getGameMode() {
 		return gameMode;
 	}
@@ -82,6 +72,14 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		for (String s : modes)
 			if (s.equalsIgnoreCase(gameMode))
 				this.gameMode = s;
+	}
+	
+	public boolean isWumpus() {
+		return wumpus;
+	}
+
+	public void setWumpus(boolean wumpus) {
+		this.wumpus = wumpus;
 	}
 
 	private void hit(int points) {
@@ -114,21 +112,46 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 	private void reportStatus() {
 		reportAvailableDirections();
-		if (reportNearby(c -> batCaverns.contains(c.to)))
-			messageReceiver.hearBats();
-		if (reportNearby(c -> pitCaverns.contains(c.to)))
-			messageReceiver.hearPit();
-		if (reportNearby(c -> wumpusCavern.equals(c.to)))
-			messageReceiver.smellWumpus();
-		if (reportNearby(c -> elixirCavern.equals(c.to)))
-			messageReceiver.hearElixir();
+		if (!isWumpus())
+		{
+			if (reportNearbyHunter(c -> batCaverns.contains(c.to)))
+				messageReceiver.hearBats();
+			if (reportNearbyHunter(c -> pitCaverns.contains(c.to)))
+				messageReceiver.hearPit();
+			if (reportNearbyHunter(c -> wumpusCavern.equals(c.to)))
+				messageReceiver.smellWumpus();
+			if (reportNearbyHunter(c -> elixirCavern.equals(c.to)))
+				messageReceiver.hearElixir();
+		}
+		else
+			{
+			int closeness = reportNearbyWumpus(c -> playerCavern.equals(c.to));
+			if (closeness > 0)
+				messageReceiver.smellHunter(closeness);
+			}
 	}
 
-	private boolean reportNearby(Predicate<Connection> nearTest) {
+	private boolean reportNearbyHunter(Predicate<Connection> nearTest) {
 		for (Connection c : connections)
 			if (playerCavern.equals(c.from) && nearTest.test(c))
 				return true;
 		return false;
+	}
+	
+	private int reportNearbyWumpus(Predicate<Connection> nearTest) {
+		List<Connection> perimeter = new ArrayList<Connection>();
+		for (Connection c : connections) //check immediate perimeter
+		{
+			perimeter.add(c);
+			if (wumpusCavern.equals(c.from) && nearTest.test(c))
+				return 1;
+		}
+		for (Connection p : perimeter) //check extended perimeter
+		{			
+			if (wumpusCavern.equals(p.from) && nearTest.test(p))
+			return 2;
+		}
+		return 0;
 	}
 
 	private void reportAvailableDirections() {
@@ -238,7 +261,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	public abstract class GameCommand implements Command {
 		public void execute() {
 			processCommand();
-			moveWumpus();
+			if (!gameMode.equals("Co-Hunt"))
+				moveWumpus();
 			checkWumpusMovedToPlayer();
 			reportStatus();
 		}

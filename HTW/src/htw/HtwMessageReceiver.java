@@ -46,4 +46,6 @@ public interface HtwMessageReceiver {
 	void end();
 
 	void wastedElixir();
+
+	void smellHunter(int closeness);
 }
