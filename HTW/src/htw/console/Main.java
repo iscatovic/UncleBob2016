@@ -43,7 +43,6 @@ public class Main implements HtwMessageReceiver {
 		game = HtwFactory.makeGame("htw.game.HuntTheWumpusGame", new Main());
 		createMap();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 		gameSetup();
 		boolean playGame = true;
 
