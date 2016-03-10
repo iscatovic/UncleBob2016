@@ -110,7 +110,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		return elixirCavern;
 	}
 
-	private void reportStatus() {
+	public void reportStatus() {
 		reportAvailableDirections();
 		if (!isWumpus())
 		{
@@ -264,9 +264,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		public void execute() {
 			processCommand();
 			if (!gameMode.equals("Co-Hunt"))
-				moveWumpus();
-			checkWumpusMovedToPlayer();
-			reportStatus();
+			{	moveWumpus();
+				checkWumpusMovedToPlayer();
+				reportStatus();
+			}
+
 		}
 
 		protected void checkWumpusMovedToPlayer() {
@@ -406,6 +408,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		}
 
 		public void processCommand() {
+			if (moveWumpus(direction))
+			{
+				checkForHunter();	
+			}
 			if (movePlayer(direction)) {
 				checkForWumpus();
 				checkForPit();
@@ -422,6 +428,13 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 				messageReceiver.end();
 			}
 		}
+		
+		private void checkForHunter() {
+			if (wumpusCavern.equals(playerCavern)) {
+				messageReceiver.wumpusFoundHunter();
+				messageReceiver.end();
+			}
+		}
 
 		private void checkForBats() {
 			if (batCaverns.contains(playerCavern)) {
@@ -434,6 +447,15 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			String destination = findDestination(playerCavern, direction);
 			if (destination != null) {
 				playerCavern = destination;
+				return true;
+			}
+			return false;
+		}
+		
+		public boolean moveWumpus(Direction direction) {
+			String destination = findDestination(wumpusCavern, direction);
+			if (destination != null) {
+				wumpusCavern = destination;
 				return true;
 			}
 			return false;

@@ -80,4 +80,6 @@ void setWumpus(boolean wumpusTurn);
 
 boolean isWumpus();
 
+void reportStatus();
+
 }

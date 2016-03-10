@@ -133,4 +133,9 @@ messages.add("WASTED_ELIXIR");
 public void smellHunter(int closeness) {
 messages.add("SMELLS_HUNTER_AT_" + closeness);	
 }
+
+@Override
+public void wumpusFoundHunter() {
+messages.add("WUMPUS_WINS");
+}
 }
