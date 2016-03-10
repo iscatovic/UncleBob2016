@@ -202,8 +202,8 @@ public class Main implements HtwMessageReceiver {
 		}
 		game.setPlayerCavern(m);
 		game.setWumpusCavern(t);
-		game.setElixirCavern(fr);
-		game.addBatCavern(fl);
+		game.setElixirCavern(fl);
+		game.addBatCavern(fr);
 		game.addPitCavern(bot);
 		
 		game.connectCavern(fl, l, Direction.EAST);
@@ -214,7 +214,7 @@ public class Main implements HtwMessageReceiver {
 		game.connectCavern(r,m ,Direction.WEST);
 		game.connectCavern(r,fr ,Direction.EAST);
 		game.connectCavern(fr,r ,Direction.WEST);
-		game.connectCavern(t, a,Direction.SOUTH);
+//		game.connectCavern(t, a,Direction.SOUTH);
 		game.connectCavern(a, t,Direction.NORTH);
 		game.connectCavern(a,m ,Direction.SOUTH);
 		game.connectCavern(m, a,Direction.NORTH);
@@ -222,6 +222,9 @@ public class Main implements HtwMessageReceiver {
 		game.connectCavern(b, m,Direction.NORTH);
 		game.connectCavern(bot, b, Direction.NORTH);
 		game.connectCavern(b,bot ,Direction.SOUTH);
+		
+//		game.connectCavern(fr, fl, Direction.EAST);
+//		game.connectCavern(fl, fr, Direction.WEST);
 		
 		game.setQuiver(5);
 		game.setHitPoints(10);
@@ -359,7 +362,6 @@ public class Main implements HtwMessageReceiver {
 	}
 
 	public void fireworks() {
-		System.out.println("Hooray.");
 
 		JFrame frame = new JFrame();
 		ImageIcon icon = new ImageIcon("./img/fireworks.jpg");
@@ -368,6 +370,7 @@ public class Main implements HtwMessageReceiver {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
+		System.out.println("Hooray.");
 	}
 
 	public void end() {
