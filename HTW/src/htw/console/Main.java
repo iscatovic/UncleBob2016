@@ -62,6 +62,7 @@ public class Main implements HtwMessageReceiver {
 			System.out.println(">");
 			game.setWumpusName(br.readLine());
 			
+			game.makeRestCommand().execute();
 			while (playGame) {
 				System.out.println();
 				System.out.println(game.getHunterName().toUpperCase() + ", IT IS YOUR TURN TO HUNT.");
