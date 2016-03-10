@@ -142,14 +142,16 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		List<Connection> perimeter = new ArrayList<Connection>();
 		for (Connection c : connections) //check immediate perimeter
 		{
-			perimeter.add(c);
-			if (wumpusCavern.equals(c.from) && nearTest.test(c))
+			if (wumpusCavern.equals(c.from))
+				{
+				perimeter.add(c);
+				if (nearTest.test(c))
 				return 1;
-		}
-		for (Connection p : perimeter) //check extended perimeter
-		{			
-			if (wumpusCavern.equals(p.from) && nearTest.test(p))
-			return 2;
+				}
+		}   //you want to check all the immediates before checking any further
+		for (Connection p : perimeter) 
+		{	if (p.to.equals(playerCavern))
+				return 2;
 		}
 		return 0;
 	}

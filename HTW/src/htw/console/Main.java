@@ -85,9 +85,10 @@ public class Main implements HtwMessageReceiver {
 	}
 
 	private static boolean performWumpusTurn(BufferedReader br) throws IOException {
-		System.out.println(game.getPlayerCavern());
+		System.out.println(game.getWumpusCavern());
 		HuntTheWumpus.Command c = game.makeRestCommand();
 		System.out.println(">");
+		game.setWumpus(true);
 		String command = br.readLine();
 		if (command.equalsIgnoreCase("e"))
 			c = game.makeMoveCommand(EAST);
@@ -102,6 +103,7 @@ public class Main implements HtwMessageReceiver {
 		else if (command.equalsIgnoreCase("q"))
 			return false;
 		c.execute();
+		game.setWumpus(false);
 		return true;
 	}
 
@@ -374,7 +376,7 @@ public class Main implements HtwMessageReceiver {
 
 	@Override
 	public void smellHunter(int closeness) {
-		System.out.println(game.getWumpusName() + " smells the hunter, " + closeness + " spaces away.");
+		System.out.println(game.getWumpusName() + " smells the hunter, distance : " + closeness + ".");
 		
 	}
 }

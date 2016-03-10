@@ -76,4 +76,8 @@ String getGameMode();
 
 void setGameMode(String mode);
 
+void setWumpus(boolean wumpusTurn);
+
+boolean isWumpus();
+
 }
