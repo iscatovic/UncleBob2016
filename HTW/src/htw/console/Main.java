@@ -53,7 +53,7 @@ public class Main implements HtwMessageReceiver {
 			}
 		}
 		else if("test".equalsIgnoreCase(game.getGameMode())) {
-			createMap();
+			createTestMap();
 			game.makeRestCommand().execute();
 			while (playGame) {
 				playGame = performHunterTurn(br);
@@ -183,6 +183,43 @@ public class Main implements HtwMessageReceiver {
 	}
 	
 	private static void createTestMap() {
+		String fr = "FarRight";
+		String fl = "FarLeft";
+		String l = "Left";
+		String m = "Middle";
+		String r = "Right";
+		String t = "Top";
+		String a = "Above";
+		String b = "Below";
+		String bot = "Bottom";
+		String [] cavernName = {fr,fl,l,m,r,t,a,b,bot};
+		for(String i:cavernName) {
+			caverns.add(i);
+		}
+		game.setPlayerCavern(m);
+		game.setWumpusCavern(t);
+		
+		game.connectCavern(fl, l, Direction.EAST);
+		game.connectCavern(l, fl,Direction.WEST);
+		game.connectCavern(l,m ,Direction.EAST);
+		game.connectCavern(m,l ,Direction.WEST);
+		game.connectCavern(m, r,Direction.EAST);
+		game.connectCavern(r,m ,Direction.WEST);
+		game.connectCavern(r,fr ,Direction.EAST);
+		game.connectCavern(fr,r ,Direction.WEST);
+		game.connectCavern(t, a,Direction.SOUTH);
+		game.connectCavern(a, t,Direction.NORTH);
+		game.connectCavern(a,m ,Direction.SOUTH);
+		game.connectCavern(m, a,Direction.NORTH);
+		game.connectCavern(m,b ,Direction.SOUTH);
+		game.connectCavern(b, m,Direction.NORTH);
+		game.connectCavern(bot, b, Direction.NORTH);
+		game.connectCavern(b,bot ,Direction.SOUTH);
+		
+		game.setQuiver(5);
+		game.setHitPoints(10);
+		
+		
 		
 	}
 
