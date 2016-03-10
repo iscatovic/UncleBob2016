@@ -200,6 +200,9 @@ public class Main implements HtwMessageReceiver {
 		}
 		game.setPlayerCavern(m);
 		game.setWumpusCavern(t);
+		game.setElixirCavern(fr);
+		game.addBatCavern(fl);
+		game.addPitCavern(bot);
 		
 		game.connectCavern(fl, l, Direction.EAST);
 		game.connectCavern(l, fl,Direction.WEST);
