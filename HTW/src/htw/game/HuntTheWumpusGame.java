@@ -6,6 +6,8 @@ import htw.HuntTheWumpus;
 import java.util.*;
 import java.util.function.Predicate;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class HuntTheWumpusGame implements HuntTheWumpus {
 	private List<Connection> connections = new ArrayList<>();
 
@@ -46,7 +48,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	}
 
 	public void setHunterName(String hunterName) {
-		this.hunterName = hunterName;
+		if (hunterName != null && hunterName.trim().length() < 1)
+			this.hunterName = hunterName;
+		else
+			this.hunterName = "Hunter";
 	}
 
 	public String getWumpusName() {
@@ -54,7 +59,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	}
 
 	public void setWumpusName(String wumpusName) {
-		this.wumpusName = wumpusName;
+		if (wumpusName != null && wumpusName.trim().length() < 1)
+			this.wumpusName = wumpusName;
+		else
+			this.wumpusName = "Wumpus";
 	}
 
 	public boolean isTwoPlayerGame() {
@@ -70,7 +78,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	}
 
 	public void setGameMode(String gameMode) {
-		this.gameMode = gameMode;
+		if (gameMode != null && gameMode.trim().length() < 1)
+			this.gameMode = gameMode;
+		else
+			this.gameMode = "Standard";
 	}
 
 	private void hit(int points) {

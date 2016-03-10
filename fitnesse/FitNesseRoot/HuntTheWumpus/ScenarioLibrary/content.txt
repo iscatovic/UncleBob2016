@@ -125,6 +125,19 @@
 |Then the player is in cavern @cavern|
 
 
+!3 Game Setting Scenarios
+|scenario|Given hunter has no name|
+|setHunterName| |
+
+|scenario|Given wumpus has no name|
+|setWumpusName| |
+
+|scenario|Then hunter_name is given|
+|getHunterName|Hunter |
+
+|scenario|Then wumpus_name is given|
+|getWumpusName|Wumpus |
+
 !3 Common Maps
 
 {{{

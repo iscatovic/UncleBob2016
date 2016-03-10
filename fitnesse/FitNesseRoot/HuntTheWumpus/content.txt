@@ -1,5 +1,6 @@
 !define TEST_SYSTEM {slim}
 !path ../HTW/bin
 !path ../HTW/test
+!path ../HTW/jars
 
 !contents -R2 -g -p -f -h

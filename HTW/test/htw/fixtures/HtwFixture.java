@@ -160,4 +160,17 @@ public class HtwFixture {
   public int hitpointsRemaining() {
 	  return game.getHitPoints();
   }
+  
+  public String getHunterName() {
+	  return game.getHunterName();
+  }
+  public String getWumpusName() {
+	  return game.getHunterName();
+  }
+  public void setHunterName(String name) {
+	  game.setHunterName(name);
+  }
+  public void setWumpusName(String name) {
+	  game.setHunterName(name);
+  }
 }
