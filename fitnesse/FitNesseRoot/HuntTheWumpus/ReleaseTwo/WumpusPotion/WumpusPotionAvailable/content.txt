@@ -1,0 +1,4 @@
+-!|script|
+|Given Game has started|
+|Then a WUMPUS_POTION message is given|
+|Then the wumpus has wumpus potion|

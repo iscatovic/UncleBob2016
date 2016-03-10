@@ -1,0 +1,18 @@
+!|scenario|Can hear elixir after moving _ _|start,direction|
+|clear messages|
+|Given the player is in cavern @start|
+|When the player rests|
+|Then a HEAR_ELIXIR message is not given|
+|When the player goes @direction|
+|Then a HEAR_ELIXIR message is given|
+
+-!|script|
+|Given Cross Map|
+|Given the Middle cavern has elixir|
+
+!|Can hear elixir after moving|
+|start|direction|
+|FarLeft|East|
+|Top|South|
+|FarRight|West|
+|Bottom|North|

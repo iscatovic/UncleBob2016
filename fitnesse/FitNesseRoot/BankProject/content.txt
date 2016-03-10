@@ -1,0 +1,29 @@
+BankProject
+
+!define TEST_SYSTEM {slim}
+!path C:\Users\Tralee\Junk\BankInterest\bin
+
+|import|
+|bankInterest|
+
+|scenario|If the balance is _|balance|
+|set balance|@balance|
+
+|scenario|and the rate is _|rate|
+|set rate|@rate|
+
+|scenario|then the interest is _|interest|
+|check |interest|@interest|
+
+Test that bank interest is calculated properly.
+
+|Bank Interest|
+|Balance|rate|interest?|
+|100|.02|2.0|
+
+|script|Bank Interest|
+|If the balance is 100|
+|and the rate is 0.05|
+|then the interest is 5.0|
+
+>BankInterest

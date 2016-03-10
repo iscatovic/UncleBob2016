@@ -1,0 +1,6 @@
+<test page>
+-!|script|
+|Given Game has Started|
+|Given wumpus has potion|
+|When the wumpus drinks potion|
+|Then a|WUMPUS_DOESNT_SMELL|message is given|

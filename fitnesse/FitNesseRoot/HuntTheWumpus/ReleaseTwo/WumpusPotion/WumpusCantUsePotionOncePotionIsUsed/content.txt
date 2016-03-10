@@ -1,0 +1,9 @@
+<test page>
+-|script|
+|Given Cross map|
+|Given the wumpus has potion|
+|When the wumpus drinks potion|
+|Then a|WUMPUS_DOESNT_SMELL|message is given|
+|Then the wumpus has no potion|
+|When the wumpus drinks potion|
+|Then a|NO_POTION|message is given|

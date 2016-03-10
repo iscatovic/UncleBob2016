@@ -1,0 +1,5 @@
+!define TEST_SYSTEM {slim}
+!path ../HTW/bin
+!path ../HTW/test
+
+!contents -R2 -g -p -f -h

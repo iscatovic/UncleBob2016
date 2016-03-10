@@ -1,0 +1,9 @@
+-!|script|
+|Given Cross Map|
+|Given the player is in cavern FarLeft|
+|Given the FarRight cavern has elixir|
+|When the player moves East 4 times|
+|Then the player is in cavern FarRight|
+|Then the FarRight cavern has no elixir|
+|Then the player has an elixir|
+|Then a|FOUND_ELIXIR|message is given|
