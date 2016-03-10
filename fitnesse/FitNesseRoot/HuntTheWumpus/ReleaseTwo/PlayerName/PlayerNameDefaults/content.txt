@@ -1,7 +1,19 @@
+|scenario|Given hunter has no name|
+|set hunter name|hunter|
+
+|scenario|Given wumpus has no name|
+|setWumpusName|wumpus|
+
+|scenario|Then hunter name is _|name|
+|ensure|get hunter name|
+
+|scenario|Then wumpus name is _|
+|ensure|get wumpus name|
+
 -!|script|
 |Given hunter has no name|
-|Then hunter_name is given|
+|Then hunter name is hunter|
 
 -!|script|
 |Given wumpus has no name|
-|Then wumpus_name is given|
+|Then wumpus name is wumpus|
