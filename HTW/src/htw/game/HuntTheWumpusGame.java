@@ -25,7 +25,8 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	  private String hunterName = "Hunter";
 	  private String wumpusName = "Wumpus";
 	  private boolean twoPlayerGame = false;
-	  private String gameMode = "Standard"; 
+	  private String gameMode = "Standard";
+	  private String[] modes = {"Standard", "Co-Hunt"};
 
 	public int getHitPoints() {
 		return hitPoints;
@@ -78,10 +79,9 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	}
 
 	public void setGameMode(String gameMode) {
-		if (gameMode != null && gameMode.trim().length() != 0)
-			this.gameMode = gameMode;
-		else
-			this.gameMode = "Standard";
+		for (String s : modes)
+			if (s.equalsIgnoreCase(gameMode))
+				this.gameMode = s;
 	}
 
 	private void hit(int points) {
