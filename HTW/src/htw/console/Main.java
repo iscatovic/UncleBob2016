@@ -222,8 +222,8 @@ public class Main implements HtwMessageReceiver {
 		game.connectCavern(bot, b, Direction.NORTH);
 		game.connectCavern(b,bot ,Direction.SOUTH);
 		
-		game.connectCavern(fr, fl, Direction.EAST);
-		game.connectCavern(fl, fr, Direction.WEST);
+//		game.connectCavern(fr, fl, Direction.EAST);
+//		game.connectCavern(fl, fr, Direction.WEST);
 		
 		game.setQuiver(5);
 		game.setHitPoints(10);
