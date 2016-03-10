@@ -110,7 +110,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		return elixirCavern;
 	}
 
-	private void reportStatus() {
+	public void reportStatus() {
 		reportAvailableDirections();
 		if (!isWumpus())
 		{
@@ -142,14 +142,16 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		List<Connection> perimeter = new ArrayList<Connection>();
 		for (Connection c : connections) //check immediate perimeter
 		{
-			perimeter.add(c);
-			if (wumpusCavern.equals(c.from) && nearTest.test(c))
+			if (wumpusCavern.equals(c.from))
+				{
+				perimeter.add(c);
+				if (nearTest.test(c))
 				return 1;
-		}
-		for (Connection p : perimeter) //check extended perimeter
-		{			
-			if (wumpusCavern.equals(p.from) && nearTest.test(p))
-			return 2;
+				}
+		}   //you want to check all the immediates before checking any further
+		for (Connection p : perimeter) 
+		{	if (p.to.equals(playerCavern))
+				return 2;
 		}
 		return 0;
 	}
@@ -262,9 +264,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		public void execute() {
 			processCommand();
 			if (!gameMode.equals("Co-Hunt"))
-				moveWumpus();
-			checkWumpusMovedToPlayer();
-			reportStatus();
+			{	moveWumpus();
+				checkWumpusMovedToPlayer();
+				reportStatus();
+			}
+
 		}
 
 		protected void checkWumpusMovedToPlayer() {
@@ -404,6 +408,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		}
 
 		public void processCommand() {
+			if (moveWumpus(direction))
+			{
+				checkForHunter();	
+			}
 			if (movePlayer(direction)) {
 				checkForWumpus();
 				checkForPit();
@@ -420,6 +428,13 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 				messageReceiver.end();
 			}
 		}
+		
+		private void checkForHunter() {
+			if (wumpusCavern.equals(playerCavern)) {
+				messageReceiver.wumpusFoundHunter();
+				messageReceiver.end();
+			}
+		}
 
 		private void checkForBats() {
 			if (batCaverns.contains(playerCavern)) {
@@ -432,6 +447,15 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			String destination = findDestination(playerCavern, direction);
 			if (destination != null) {
 				playerCavern = destination;
+				return true;
+			}
+			return false;
+		}
+		
+		public boolean moveWumpus(Direction direction) {
+			String destination = findDestination(wumpusCavern, direction);
+			if (destination != null) {
+				wumpusCavern = destination;
 				return true;
 			}
 			return false;

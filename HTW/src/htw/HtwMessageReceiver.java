@@ -48,4 +48,6 @@ public interface HtwMessageReceiver {
 	void wastedElixir();
 
 	void smellHunter(int closeness);
+
+	void wumpusFoundHunter();
 }

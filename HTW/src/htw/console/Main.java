@@ -68,8 +68,7 @@ public class Main implements HtwMessageReceiver {
 			System.out.println("Enter the Wumpus Name");
 			System.out.println(">");
 			game.setWumpusName(br.readLine());
-			
-			game.makeRestCommand().execute();
+
 			while (playGame) {
 				System.out.println();
 				System.out.println(game.getHunterName().toUpperCase() + ", IT IS YOUR TURN TO HUNT.");
@@ -85,9 +84,11 @@ public class Main implements HtwMessageReceiver {
 	}
 
 	private static boolean performWumpusTurn(BufferedReader br) throws IOException {
-		System.out.println(game.getPlayerCavern());
+		System.out.println(game.getWumpusCavern());
+		game.reportStatus();
 		HuntTheWumpus.Command c = game.makeRestCommand();
 		System.out.println(">");
+		game.setWumpus(true);
 		String command = br.readLine();
 		if (command.equalsIgnoreCase("e"))
 			c = game.makeMoveCommand(EAST);
@@ -102,11 +103,13 @@ public class Main implements HtwMessageReceiver {
 		else if (command.equalsIgnoreCase("q"))
 			return false;
 		c.execute();
+		game.setWumpus(false);
 		return true;
 	}
 
 	private static boolean performHunterTurn(BufferedReader br) throws IOException {
 		System.out.println(game.getPlayerCavern());
+		game.reportStatus();
 		System.out.println("Health: " + game.getHitPoints() + " / arrows: "
 				+ game.getQuiver() + " / elixir: "
 				+ (game.getItems().hasElixir() ? 1 : 0));
@@ -380,7 +383,11 @@ public class Main implements HtwMessageReceiver {
 
 	@Override
 	public void smellHunter(int closeness) {
-		System.out.println(game.getWumpusName() + " smells the hunter, " + closeness + " spaces away.");
-		
+		System.out.println(game.getWumpusName() + " smells the hunter, distance : " + closeness + ".");	
+	}
+
+	@Override
+	public void wumpusFoundHunter() {
+		System.out.println(game.getWumpusName() + " found and ate " + game.getHunterName() + "!");			
 	}
 }
