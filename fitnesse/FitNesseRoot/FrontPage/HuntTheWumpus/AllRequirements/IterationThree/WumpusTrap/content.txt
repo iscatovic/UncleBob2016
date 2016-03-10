@@ -1,4 +1,0 @@
-^FindWumpusTrap
-^SetWumpusTrap
-^TrapWumpus
-

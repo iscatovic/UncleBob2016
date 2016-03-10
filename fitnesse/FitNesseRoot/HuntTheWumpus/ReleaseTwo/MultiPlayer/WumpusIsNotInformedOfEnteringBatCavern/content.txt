@@ -1,6 +1,0 @@
--!|script|
-|Given Cross Map|
-|Given the Middle cavern has bats|
-|Given the wumpus is in cavern Left|
-|When the wumpus goes East|
-|Then a BAT_TRANSPORT message is not given|

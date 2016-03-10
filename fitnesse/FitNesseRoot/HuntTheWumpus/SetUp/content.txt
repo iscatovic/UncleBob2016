@@ -1,7 +1,0 @@
-|import|
-|htw.fixtures|
-
-|library|
-|Htw Fixture|
-
-|Test Context|

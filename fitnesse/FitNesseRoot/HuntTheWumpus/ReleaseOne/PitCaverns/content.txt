@@ -1,2 +1,0 @@
-!1 Pit Caverns
-!contents -R2 -g -p -f -h

@@ -1,7 +1,0 @@
--!|script|
-|Given Cross Map|
-|Given the Middle cavern has elixir|
-|Given the player is in cavern Left|
-|When the player goes East|
-|Then a FOUND_ELIXIR message is given|
-|Then the player has an elixir|

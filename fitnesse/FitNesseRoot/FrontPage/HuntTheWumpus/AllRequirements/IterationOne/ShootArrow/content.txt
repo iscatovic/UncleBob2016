@@ -1,8 +1,0 @@
-We need to make sure we can:
- * ^TestCanShootWhenThereAreArrows
- * ^TestCannotShootWhenThereAreNoArrows
- * ^TestPlayerDiesWhenArrowBouncesOffWallInSameCavern
- * ^TestAbbreviationsOfShootCommand
- * ^TestCanPickUpMultipleArrows
- * ^TestLongDistanceKill
-

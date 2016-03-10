@@ -1,8 +1,0 @@
-<test page>
--|script|
-|Given Cross map|
-|Given the player is in cavern Middle|
-|Given the player has no elixir|
-|When the player drinks elixir|
-|Then a|NO_ELIXIR|message is given|
-'

@@ -1,6 +1,0 @@
-Test that bank interest is calculated properly.
-
-|Bank Interest|
-|Balance|rate|interest?|
-|100|.02|2.0|
-

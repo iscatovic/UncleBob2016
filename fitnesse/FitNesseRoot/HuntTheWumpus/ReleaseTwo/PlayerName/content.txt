@@ -1,2 +1,0 @@
-!1 Player Name Test Suite
-!contents -R2 -g -p -f -h

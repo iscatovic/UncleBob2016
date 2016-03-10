@@ -1,7 +1,0 @@
-!|Import|
-|HuntTheWumpus.fixtures|
-
-![
-Library
-Game driver
-]!
