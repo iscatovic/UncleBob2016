@@ -1,14 +1,4 @@
-|scenario|Given hunter has no name|
-|set hunter name||
 
-|scenario|Given wumpus has no name|
-|set wumpus  name||
-
-|scenario|Then the hunter name is _|huntername|
-|check|get hunter name|@huntername|
-
-|scenario|Then the wumpus name is _|wumpusname|
-|check|get wumpus name|@wumpusname|
 
 
 -!|script|

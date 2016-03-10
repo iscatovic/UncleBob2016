@@ -118,6 +118,25 @@
 |scenario|Then a _ message is not given|msg|
 |ensure|Message id|@msg|was not given|
 
+!3 Player name scenarios
+|scenario|Given hunter has no name|
+|set hunter name||
+
+|scenario|Given wumpus has no name|
+|set wumpus  name||
+
+|scenario|Given hunter name is _|huntername|
+|set hunter name|@huntername|
+
+|scenario|Given wumpus name is _|wumpusname|
+|set wumpus name|@wumpusname|
+
+|scenario|Then the hunter name is _|huntername|
+|check|get hunter name|@huntername|
+
+|scenario|Then the wumpus name is _|wumpusname|
+|check|get wumpus name|@wumpusname|
+
 !3 Movement Scenarios
 
 |scenario|Moving _ ends in cavern _|direction,cavern|
