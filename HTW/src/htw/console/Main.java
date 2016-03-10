@@ -41,18 +41,26 @@ public class Main implements HtwMessageReceiver {
 
 	public static void main(String[] args) throws IOException {
 		game = HtwFactory.makeGame("htw.game.HuntTheWumpusGame", new Main());
-		createMap();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		gameSetup();
 		boolean playGame = true;
 
 		if ("Standard".equals(game.getGameMode())) {
+			createMap();
+			game.makeRestCommand().execute();
+			while (playGame) {
+				playGame = performHunterTurn(br);
+			}
+		}
+		else if("test".equalsIgnoreCase(game.getGameMode())) {
+			createMap();
 			game.makeRestCommand().execute();
 			while (playGame) {
 				playGame = performHunterTurn(br);
 			}
 		}
 		else if ("Co-Hunt".equals(game.getGameMode())) {
+			createMap();
 			System.out.println("Enter the Hunter's Name");
 			System.out.println(">");
 			game.setHunterName(br.readLine());
@@ -172,6 +180,10 @@ public class Main implements HtwMessageReceiver {
 
 		game.setQuiver(5);
 		game.setHitPoints(10);
+	}
+	
+	private static void createTestMap() {
+		
 	}
 
 	private static String makeName() {
