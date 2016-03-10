@@ -48,11 +48,19 @@ public class GameModeTest extends TestContext{
 		
 		game.setHunterName("");
 		Assert.assertTrue("Hunter".equals(game.getHunterName()));
-
-		game.setHunterName("");
-		Assert.assertTrue("Wumpus".equals(game.getWumpusName()));
+		game.setHunterName("  ");
+		Assert.assertTrue("Hunter".equals(game.getHunterName()));
 		
 		game.setHunterName("");
+		Assert.assertTrue("Wumpus".equals(game.getWumpusName()));
+		game.setHunterName("	");
+		Assert.assertTrue("Wumpus".equals(game.getWumpusName()));
+		
+		
+		game.setHunterName("");
+		Assert.assertTrue("Standard".equals(game.getGameMode()));
+		
+		game.setHunterName(" ");
 		Assert.assertTrue("Standard".equals(game.getGameMode()));
 	}
 	

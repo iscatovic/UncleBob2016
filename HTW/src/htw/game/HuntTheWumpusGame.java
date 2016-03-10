@@ -48,7 +48,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	}
 
 	public void setHunterName(String hunterName) {
-		if (hunterName != null && hunterName.trim().length() < 1)
+		if (hunterName != null && hunterName.trim().length() !=0)
 			this.hunterName = hunterName;
 		else
 			this.hunterName = "Hunter";
@@ -59,7 +59,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	}
 
 	public void setWumpusName(String wumpusName) {
-		if (wumpusName != null && wumpusName.trim().length() < 1)
+		if (wumpusName != null && wumpusName.trim().length() != 0)
 			this.wumpusName = wumpusName;
 		else
 			this.wumpusName = "Wumpus";
@@ -78,7 +78,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	}
 
 	public void setGameMode(String gameMode) {
-		if (gameMode != null && gameMode.trim().length() < 1)
+		if (gameMode != null && gameMode.trim().length() != 0)
 			this.gameMode = gameMode;
 		else
 			this.gameMode = "Standard";
