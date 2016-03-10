@@ -40,6 +40,12 @@ public class GameModeTest extends TestContext{
 		Assert.assertTrue("Standard".equals(game.getGameMode()));
 		game.setGameMode("Co-Hunt");
 		Assert.assertTrue("Co-Hunt".equals(game.getGameMode()));
+		game.setGameMode("standard");
+		Assert.assertTrue("Standard".equals(game.getGameMode()));
+		game.setGameMode("co");
+		Assert.assertTrue("Standard".equals(game.getGameMode()));
+		game.setGameMode("co-hunt");
+		Assert.assertTrue("Co-Hunt".equals(game.getGameMode()));
 		
 	}
 	
