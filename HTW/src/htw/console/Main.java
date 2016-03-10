@@ -181,6 +181,10 @@ public class Main implements HtwMessageReceiver {
 		game.setQuiver(5);
 		game.setHitPoints(10);
 	}
+	
+	private static void createTestMap() {
+		
+	}
 
 	private static String makeName() {
 

@@ -26,7 +26,7 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	  private String wumpusName = "Wumpus";
 	  private boolean twoPlayerGame = false;
 	  private String gameMode = "Standard";
-	  private String[] modes = {"Standard", "Co-Hunt"};
+	  private String[] modes = {"Standard", "Co-Hunt", "test"};
 
 	public int getHitPoints() {
 		return hitPoints;
