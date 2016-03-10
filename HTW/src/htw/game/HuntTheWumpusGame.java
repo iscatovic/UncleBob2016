@@ -20,6 +20,10 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private String elixirCavern = "NONE";
 	private Items items = new Items();
 	private int hitPoints;
+	  private String hunterName = "Hunter";
+	  private String wumpusName = "Wumpus";
+	  private boolean twoPlayerGame = false;
+	  private String gameMode = "Standard"; 
 
 	public int getHitPoints() {
 		return hitPoints;
@@ -35,6 +39,38 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 
 	public void setItems(Items items) {
 		this.items = items;
+	}
+	
+	public String getHunterName() {
+		return hunterName;
+	}
+
+	public void setHunterName(String hunterName) {
+		this.hunterName = hunterName;
+	}
+
+	public String getWumpusName() {
+		return wumpusName;
+	}
+
+	public void setWumpusName(String wumpusName) {
+		this.wumpusName = wumpusName;
+	}
+
+	public boolean isTwoPlayerGame() {
+		return twoPlayerGame;
+	}
+
+	public void setTwoPlayerGame(boolean twoPlayerGame) {
+		this.twoPlayerGame = twoPlayerGame;
+	}
+
+	public String getGameMode() {
+		return gameMode;
+	}
+
+	public void setGameMode(String gameMode) {
+		this.gameMode = gameMode;
 	}
 
 	private void hit(int points) {

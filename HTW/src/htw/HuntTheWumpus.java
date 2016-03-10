@@ -63,6 +63,17 @@ public interface HuntTheWumpus {
 			this.elixir = elixir;
 		}	
 	}
-  
+
+void setHunterName(String name);
+
+String getHunterName();
+
+String getWumpusName();
+
+void setWumpusName(String name);
+
+String getGameMode();
+
+void setGameMode(String mode);
 
 }
