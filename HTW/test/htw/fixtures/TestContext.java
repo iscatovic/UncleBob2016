@@ -128,4 +128,9 @@ public void end() {
 public void wastedElixir() {
 messages.add("WASTED_ELIXIR");	
 }
+
+@Override
+public void smellHunter(int closeness) {
+messages.add("SMELLS_HUNTER_AT_" + closeness);	
+}
 }
