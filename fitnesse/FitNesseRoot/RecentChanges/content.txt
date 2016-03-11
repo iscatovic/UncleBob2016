@@ -1,4 +1,4 @@
-|HuntTheWumpus.ReleaseTwo.FireWorks.WumpusKillsHunterFireworksDisplay||03:45:03 Fri, Mar 11, 2016|
+|HuntTheWumpus.ReleaseTwo.FireWorks.WumpusKillsHunterFireworksDisplay||05:22:33 Fri, Mar 11, 2016|
 |HuntTheWumpus.ScenarioLibrary||03:42:47 Fri, Mar 11, 2016|
 |HuntTheWumpus.ReleaseOne.PitCaverns.PlayerFallsIntoPitAndDies||09:06:47 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseOne.HuntingWithArrows.PlayerKilledByShootingWall||09:04:17 Mon, Mar 07, 2016|
