@@ -110,6 +110,9 @@
 |scenario|Then the wumpus is in cavern|c|
 |check|get wumpus cavern|@c|
 
+|scenario|When the wumpus goes|dir|
+|move wumpus|@dir|
+
 !3 Message Scenarios
 
 |scenario|Then a _ message is given|msg|

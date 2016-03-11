@@ -3,5 +3,7 @@
 |Given cavern B connects to cavern A going East|
 |Given the player has 1 arrow|
 |Given the player is in cavern A|
+|Given the player has 10 health|
 |When the player shoots East|
 |Then a PLAYER_SHOOTS_SELF_IN_BACK message is given|
+|Then the player health is 7|

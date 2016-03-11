@@ -2,5 +2,7 @@
 |Given Cross Map|
 |Given the player is in cavern FarLeft|
 |Given the player has 1 arrow|
+|Given the player has 7 health|
 |When the player shoots North|
 |Then a|PLAYER_SHOOTS_WALL|message is given|
+|Then the player health is 4|

@@ -1,9 +1,12 @@
-|HuntTheWumpus.ScenarioLibrary||08:55:19 Mon, Mar 07, 2016|
+|HuntTheWumpus.ReleaseTwo.FireWorks.WumpusKillsHunterFireworksDisplay||05:22:33 Fri, Mar 11, 2016|
+|HuntTheWumpus.ScenarioLibrary||03:42:47 Fri, Mar 11, 2016|
+|HuntTheWumpus.ReleaseOne.PitCaverns.PlayerFallsIntoPitAndDies||09:06:47 Mon, Mar 07, 2016|
+|HuntTheWumpus.ReleaseOne.HuntingWithArrows.PlayerKilledByShootingWall||09:04:17 Mon, Mar 07, 2016|
+|HuntTheWumpus.ReleaseOne.HuntingWithArrows.PlayerKilledByShootingInCircle||09:03:17 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseTwo.PlayerName.PlayerNameEntered||08:54:45 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseTwo.PlayerName.PlayerNameDefaults||08:50:04 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseTwo.PlayerName||08:41:00 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseTwo.MultiPlayer.WumpusCanMoveThroughMap||06:49:17 Mon, Mar 07, 2016|
-|HuntTheWumpus.ReleaseTwo.FireWorks.WumpusKillsHunterFireworksDisplay||06:40:22 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseTwo.WumpusPotion.WumpusActivatesPotion||06:35:15 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseTwo.WumpusPotion.WumpusCantUsePotionOncePotionIsUsed||06:33:51 Mon, Mar 07, 2016|
 |HuntTheWumpus.ReleaseTwo.WumpusPotion.WumpusCantUsePotionIfNoPotionAvailable||06:27:29 Mon, Mar 07, 2016|
@@ -54,7 +57,6 @@
 |HuntTheWumpus.ReleaseOne.PlayerRecievesStatusAfterEachTurn.PlayerSmellsWumpus||13:18:11 Fri, Oct 09, 2015|
 |HuntTheWumpus.ReleaseOne.PlayerRecievesStatusAfterEachTurn.PlayerHearsPit||13:17:48 Fri, Oct 09, 2015|
 |HuntTheWumpus.ReleaseOne.PlayerRecievesStatusAfterEachTurn.PlayerHearsBats||13:17:33 Fri, Oct 09, 2015|
-|HuntTheWumpus.ReleaseOne.HuntingWithArrows.PlayerKilledByShootingWall||13:11:57 Fri, Oct 09, 2015|
 |HuntTheWumpus.SetUp||09:21:04 Fri, Oct 09, 2015|
 |HuntTheWumpus.ReleaseOne.WumpusKillsPlayer.WumpusMovesToPlayer||09:16:17 Fri, Oct 09, 2015|
 |HuntTheWumpus.ReleaseOne.HuntingWithArrows.ArrowKillsWumpus||09:08:05 Fri, Oct 09, 2015|
@@ -62,7 +64,6 @@
 |HuntTheWumpus.ReleaseOne.WumpusKillsPlayer.PlayerMovesIntoWumpus||09:04:35 Fri, Oct 09, 2015|
 |HuntTheWumpus.ReleaseOne.WumpusKillsPlayer||08:59:43 Fri, Oct 09, 2015|
 |HuntTheWumpus.WumpusKillsPlayer||08:58:56 Fri, Oct 09, 2015|
-|HuntTheWumpus.ReleaseOne.HuntingWithArrows.PlayerKilledByShootingInCircle||08:40:30 Fri, Oct 09, 2015|
 |HuntTheWumpus.ReleaseOne.HuntingWithArrows.PlayerCanNotShootWithoutArrows||11:42:17 Thu, Oct 08, 2015|
 |HuntTheWumpus.ReleaseOne.HuntingWithArrows||11:36:42 Thu, Oct 08, 2015|
 |HuntTheWumpus.ReleaseOne.WumpusMovesRandomlyEachTurn||10:52:50 Thu, Oct 08, 2015|
