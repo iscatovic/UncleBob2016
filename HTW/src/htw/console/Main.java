@@ -109,7 +109,8 @@ public class Main implements HtwMessageReceiver {
 
 	private static boolean performHunterTurn(BufferedReader br) throws IOException {
 		System.out.println(game.getPlayerCavern());
-		game.reportStatus();
+		if (game.getGameMode().equalsIgnoreCase("Co-Hunt"))
+			game.reportStatus();
 		System.out.println("Health: " + game.getHitPoints() + " / arrows: "
 				+ game.getQuiver() + " / elixir: "
 				+ (game.getItems().hasElixir() ? 1 : 0));

@@ -20,11 +20,11 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 	private String elixirCavern = "NONE";
 	private Items items = new Items();
 	private int hitPoints;
-	  private String hunterName = "Hunter";
-	  private String wumpusName = "Wumpus";
-	  private String gameMode = "Standard";
-	  private String[] modes = {"Standard", "Co-Hunt", "test"};
-	  private boolean wumpus = false;
+	private String hunterName = "Hunter";
+	private String wumpusName = "Wumpus";
+	private String gameMode = "Standard";
+    private String[] modes = {"Standard", "Co-Hunt", "test"};
+	private boolean wumpus = false;
 
 	public int getHitPoints() {
 		return hitPoints;
