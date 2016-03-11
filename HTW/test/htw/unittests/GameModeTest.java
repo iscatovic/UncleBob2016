@@ -5,10 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import htw.HuntTheWumpus;
-import htw.console.Main;
 import htw.factory.HtwFactory;
 import htw.fixtures.TestContext;
-import htw.game.HuntTheWumpusGame;
 
 public class GameModeTest extends TestContext{
 
