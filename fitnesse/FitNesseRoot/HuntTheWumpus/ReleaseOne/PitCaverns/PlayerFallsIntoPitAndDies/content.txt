@@ -2,6 +2,8 @@
 |Given Cross Map|
 |Given the Middle cavern has a pit|
 |Given the player is in cavern Left|
+|Given the player has 4 health|
 |When the player goes East|
 |Then a FELL_IN_PIT message is given|
+|Then the player health is 0|
 
