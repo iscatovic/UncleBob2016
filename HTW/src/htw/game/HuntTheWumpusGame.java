@@ -468,7 +468,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			String destination = findDestination(playerCavern, direction);
 			if (destination != null) {
 				playerCavern = destination;
-<<<<<<< HEAD
 				return true;
 			}
 			return false;
@@ -478,8 +477,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			String destination = findDestination(wumpusCavern, direction);
 			if (destination != null) {
 				wumpusCavern = destination;
-=======
->>>>>>> branch 'master' of https://github.com/iscatovic/UncleBob2016.git
 				return true;
 			}
 			return false;
