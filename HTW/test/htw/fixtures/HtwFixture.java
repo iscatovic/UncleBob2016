@@ -27,7 +27,7 @@ public class HtwFixture {
 	public boolean moveWumpus(String dir) {
 		game.setWumpus(true);
 		game.setGameMode("co-hunt");
-		return true;
+		return game.moveWumpus(dir);
 	}
 
 	public String getPlayerCavern() {

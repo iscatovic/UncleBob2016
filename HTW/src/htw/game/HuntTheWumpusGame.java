@@ -190,6 +190,14 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 		int choice = (int) (Math.random() * nChoices);
 		wumpusCavern = wumpusChoices.get(choice);
 	}
+	protected boolean moveWumpus(Direction direction) {
+		String destination = findDestination(wumpusCavern, direction);
+		if (destination != null) {
+			wumpusCavern = destination;
+			return true;
+		}
+		return false;
+	}
 
 	private void randomlyTransportPlayer() {
 		Set<String> transportChoices = new HashSet<>(caverns);
@@ -447,15 +455,6 @@ public class HuntTheWumpusGame implements HuntTheWumpus {
 			String destination = findDestination(playerCavern, direction);
 			if (destination != null) {
 				playerCavern = destination;
-				return true;
-			}
-			return false;
-		}
-		
-		public boolean moveWumpus(Direction direction) {
-			String destination = findDestination(wumpusCavern, direction);
-			if (destination != null) {
-				wumpusCavern = destination;
 				return true;
 			}
 			return false;

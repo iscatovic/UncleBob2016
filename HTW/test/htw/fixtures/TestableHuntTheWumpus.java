@@ -18,5 +18,18 @@ public class TestableHuntTheWumpus extends HuntTheWumpusGame {
   public void freezeWumpus() {
     wumpusFrozen = true;
   }
+  protected boolean moveWumpus(String dir) {
+	  Direction direction = null;
+	  if ("east".equalsIgnoreCase(dir))
+		  direction = Direction.EAST;
+	  if ("west".equalsIgnoreCase(dir))
+		  direction = Direction.WEST;
+	  if ("north".equalsIgnoreCase(dir))
+		  direction = Direction.NORTH;
+	  if ("south".equalsIgnoreCase(dir))
+		  direction = Direction.SOUTH;
+	  
+	  return super.moveWumpus(direction);
+  }
 
 }
