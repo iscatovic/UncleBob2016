@@ -136,6 +136,6 @@ messages.add("SMELLS_HUNTER_AT_" + closeness);
 
 @Override
 public void wumpusFoundHunter() {
-messages.add("WUMPUS_WINS");
+messages.add("WUMPUS_FOUND_HUNTER");
 }
 }
