@@ -18,4 +18,5 @@ public class TestableHuntTheWumpus extends HuntTheWumpusGame {
   public void freezeWumpus() {
     wumpusFrozen = true;
   }
+
 }
